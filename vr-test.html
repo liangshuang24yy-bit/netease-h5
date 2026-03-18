@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VR功能测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .test-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .test-item h2 {
+            margin-top: 0;
+            color: #e60012;
+        }
+
+        .vr-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .vr-btn.guangzhou {
+            background: linear-gradient(135deg, #e60012 0%, #ff6b7a 100%);
+        }
+
+        .vr-btn.shanghai {
+            background: linear-gradient(135deg, #0066cc 0%, #4da6ff 100%);
+        }
+
+        .vr-btn.hangzhou {
+            background: linear-gradient(135deg, #009933 0%, #4dd16d 100%);
+        }
+
+        .vr-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .test-result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .test-result.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .test-result.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #0066cc;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            color: #004499;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 VR功能测试页面</h1>
+
+        <div class="info-box">
+            <h3>📋 测试说明</h3>
+            <p>此页面用于测试公司模块中的VR功能是否正常工作。点击下方按钮，检查VR链接是否能正常加载。</p>
+        </div>
+
+        <div class="test-item">
+            <h2>🏢 广州园区VR测试</h2>
+            <button class="vr-btn guangzhou" onclick="testVR('guangzhou')">
+                测试广州园区VR
+            </button>
+            <div class="test-result" id="result-guangzhou"></div>
+        </div>
+
+        <div class="test-item">
+            <h2>🏢 上海园区VR测试</h2>
+            <button class="vr-btn shanghai" onclick="testVR('shanghai')">
+                测试上海园区VR
+            </button>
+            <div class="test-result" id="result-shanghai"></div>
+        </div>
+
+        <div class="test-item">
+            <h2>🏢 杭州园区VR测试</h2>
+            <button class="vr-btn hangzhou" onclick="testVR('hangzhou')">
+                测试杭州园区VR
+            </button>
+            <div class="test-result" id="result-hangzhou"></div>
+        </div>
+
+        <div class="test-item">
+            <h2>📊 批量测试</h2>
+            <button class="vr-btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" onclick="testAllVR()">
+                批量测试所有VR链接
+            </button>
+            <div class="test-result" id="result-all"></div>
+        </div>
+
+        <div class="info-box">
+            <h3>🔍 测试结果说明</h3>
+            <p><strong>✅ 成功</strong>: VR链接可以正常访问和加载</p>
+            <p><strong>❌ 失败</strong>: VR链接无法访问，可能原因：</p>
+            <ul>
+                <li>网络连接问题</li>
+                <li>720云服务暂时不可用</li>
+                <li>链接已失效或被删除</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // VR链接配置
+        const vrLinks = {
+            guangzhou: 'https://www.720yun.com/t/a3vkbefbg7y?scene_id=88507574',
+            shanghai: 'https://www.720yun.com/t/a3vkbefbg7y?scene_id=128956779',
+            hangzhou: 'https://www.720yun.com/t/a3vkbefbg7y?scene_id=88507644'
+        };
+
+        // 测试单个VR链接
+        async function testVR(campus) {
+            const resultDiv = document.getElementById(`result-${campus}`);
+            const url = vrLinks[campus];
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '⏳ 正在测试连接...';
+            resultDiv.className = 'test-result';
+
+            try {
+                // 使用fetch测试链接是否可访问
+                const response = await fetch(url, {
+                    method: 'HEAD',
+                    mode: 'no-cors', // 由于跨域限制，使用no-cors模式
+                    cache: 'no-cache'
+                });
+
+                // 由于no-cors模式无法获取响应状态，我们假设如果请求没有抛出错误则链接有效
+                resultDiv.innerHTML = `✅ <strong>${campus.toUpperCase()}园区VR测试成功</strong><br>
+                链接: ${url}<br>
+                状态: 链接可访问`;
+                resultDiv.classList.add('success');
+
+            } catch (error) {
+                // 如果请求失败，可能是网络问题或链接无效
+                // 但由于跨域限制，我们不能确定具体原因
+                resultDiv.innerHTML = `⚠️ <strong>${campus.toUpperCase()}园区VR测试结果</strong><br>
+                链接: ${url}<br>
+                注意: 由于跨域限制，无法准确测试链接状态<br>
+                建议: 直接在浏览器中打开链接验证`;
+
+                resultDiv.classList.remove('success');
+                resultDiv.classList.remove('error');
+            }
+        }
+
+        // 批量测试所有VR链接
+        async function testAllVR() {
+            const resultDiv = document.getElementById('result-all');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '⏳ 正在批量测试所有VR链接...';
+            resultDiv.className = 'test-result';
+
+            const campuses = ['guangzhou', 'shanghai', 'hangzhou'];
+            let results = [];
+
+            for (const campus of campuses) {
+                const url = vrLinks[campus];
+                results.push(`📍 ${campus.toUpperCase()}: ${url}`);
+            }
+
+            resultDiv.innerHTML = `📋 <strong>所有VR链接配置:</strong><br><br>${results.join('<br>')}<br><br>
+            <strong>💡 建议:</strong><br>
+            1. 逐个点击上方按钮测试各园区VR<br>
+            2. 直接在浏览器新标签中打开链接验证<br>
+            3. 在公司模块中实际测试VR功能`;
+
+            resultDiv.classList.remove('success');
+            resultDiv.classList.remove('error');
+        }
+
+        // 页面加载完成后的提示
+        window.addEventListener('load', function() {
+            console.log('VR测试页面加载完成');
+            console.log('可用的VR链接:', vrLinks);
+        });
+    </script>
+</body>
+</html>

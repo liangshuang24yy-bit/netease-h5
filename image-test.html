@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片链接测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .test-section h2 {
+            color: #e60012;
+            margin-top: 0;
+        }
+
+        .image-test {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+        }
+
+        .image-test img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .link-info {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        .error-message {
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #d32f2f;
+            margin: 20px 0;
+        }
+
+        .success-message {
+            color: #388e3c;
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #388e3c;
+            margin: 20px 0;
+        }
+
+        .info-message {
+            color: #1976d2;
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #1976d2;
+            margin: 20px 0;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .solution-step {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .solution-step strong {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 图片链接问题诊断</h1>
+
+    <div class="error-message">
+        <h3>❌ 问题诊断</h3>
+        <p><strong>当前链接:</strong> <code>https://ibb.co/nq7Lhs9P</code></p>
+        <p><strong>问题:</strong> 这是ImgBB的短链接，指向HTML页面，不是图片文件</p>
+        <p><strong>结果:</strong> 图片无法在 &lt;img&gt; 标签中显示</p>
+    </div>
+
+    <div class="test-section">
+        <h2>📊 测试当前链接</h2>
+        <p>尝试使用当前短链接：</p>
+        <div class="link-info">https://ibb.co/nq7Lhs9P</div>
+        
+        <div class="image-test">
+            <p><strong>测试结果：</strong></p>
+            <img src="https://ibb.co/nq7Lhs9P" alt="测试图片（短链接）" onerror="this.parentElement.innerHTML='<div class=\'error-message\'>❌ 图片加载失败 - 短链接无法直接显示</div>'">
+        </div>
+    </div>
+
+    <div class="info-message">
+        <h3>💡 问题原因</h3>
+        <p>ImgBB的短链接 <code>https://ibb.co/xxxxx</code> 是HTML页面链接，不是图片文件链接。</p>
+        <p>正确的图片链接格式应该是：</p>
+        <ul>
+            <li><code>https://i.ibb.co/xxxxx/filename.jpg</code></li>
+            <li><code>https://i.ibb.co/xxxxx/filename.png</code></li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🔧 解决方案</h2>
+        
+        <div class="solution-step">
+            <h4><strong>方案一：获取正确的图片链接（推荐）</strong></h4>
+            <ol>
+                <li>访问 <a href="https://ibb.co/nq7Lhs9P" target="_blank">https://ibb.co/nq7Lhs9P</a></li>
+                <li>在页面上右键点击图片</li>
+                <li>选择"复制图片地址"或"在新标签页中打开图片"</li>
+                <li>获取到的链接格式应该是：<code>https://i.ibb.co/xxxxx/xxxxx.jpg</code></li>
+                <li>将此链接替换到HTML代码中</li>
+            </ol>
+        </div>
+
+        <div class="solution-step">
+            <h4><strong>方案二：使用iframe嵌入</strong></h4>
+            <p>如果确实想使用短链接，可以改用iframe：</p>
+            <pre><code>&lt;iframe src="https://ibb.co/nq7Lhs9P" width="100%" height="400"&gt;&lt;/iframe&gt;</code></pre>
+        </div>
+
+        <div class="solution-step">
+            <h4><strong>方案三：重新上传图片</strong></h4>
+            <p>如果以上方法都不行，建议：</p>
+            <ol>
+                <li>下载图片到本地</li>
+                <li>使用其他图片托管服务（如：sm.ms、postimages.org）</li>
+                <li>或直接放到项目的images目录中</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📝 代码对比</h2>
+        
+        <h3>❌ 错误写法</h3>
+        <div class="error-message">
+            <code>&lt;img src="https://ibb.co/nq7Lhs9P" alt="图片"&gt;</code>
+            <p>这是短链接，无法显示</p>
+        </div>
+
+        <h3>✅ 正确写法</h3>
+        <div class="success-message">
+            <code>&lt;img src="https://i.ibb.co/xxxxx/your-image.jpg" alt="图片"&gt;</code>
+            <p>这是直接图片链接，可以正常显示</p>
+        </div>
+    </div>
+
+    <div class="info-message">
+        <h3>🎯 下一步操作</h3>
+        <p><strong>请您执行以下操作：</strong></p>
+        <ol>
+            <li>点击上面的链接访问ImgBB页面</li>
+            <li>右键点击图片，选择"复制图片地址"</li>
+            <li>将获取到的正确图片链接发给我</li>
+            <li>我会帮您更新到代码中</li>
+        </ol>
+        <p><strong>或者：</strong></p>
+        <p>如果您有图片文件，可以上传到其他图片托管服务，然后将新的链接提供给我。</p>
+    </div>
+
+    <div class="test-section">
+        <h2>🔗 有用的链接</h2>
+        <ul>
+            <li><a href="https://ibb.co/nq7Lhs9P" target="_blank">访问当前ImgBB页面</a></li>
+            <li><a href="https://sm.ms/" target="_blank">SM.MS图床（推荐）</a></li>
+            <li><a href="https://postimages.org/" target="_blank">PostImages图床</a></li>
+        </ul>
+    </div>
+
+    <script>
+        console.log('图片链接测试页面已加载');
+        console.log('问题：使用的是ImgBB短链接，不是直接图片链接');
+        console.log('解决方案：获取正确的图片URL或使用其他托管服务');
+    </script>
+</body>
+</html>

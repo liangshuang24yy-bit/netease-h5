@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片链接测试 - 尝试多种可能</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        h1 {
+            color: #e60012;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .test-item {
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+        }
+        .test-item h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .link-url {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            word-break: break-all;
+            font-size: 0.9rem;
+        }
+        .test-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: block;
+            border: 2px solid #e8e8e8;
+        }
+        .success {
+            border-color: #4caf50 !important;
+            background: #e8f5e9;
+        }
+        .success h3 {
+            color: #4caf50 !important;
+        }
+        .error {
+            border-color: #f44336 !important;
+            background: #ffebee;
+        }
+        .error h3 {
+            color: #f44336 !important;
+        }
+        .status {
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .status.success {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .status.error {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+        .info-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+        .iframe-test {
+            margin: 20px 0;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 图片链接测试 - 尝试多种可能的URL</h1>
+
+    <div class="info-box">
+        <h3>📝 测试说明</h3>
+        <p>我将尝试多种可能的ImgBB图片链接格式，以找到能正常显示的链接。</p>
+        <p><strong>原始短链接：</strong> https://ibb.co/nq7Lhs9P</p>
+    </div>
+
+    <div class="test-container">
+        <h2>🧪 测试不同的链接格式</h2>
+
+        <!-- 测试1：尝试JPG格式 -->
+        <div class="test-item" id="test1">
+            <h3>测试 1：JPG 格式</h3>
+            <div class="link-url">https://i.ibb.co/nq7Lhs9P/image.jpg</div>
+            <img src="https://i.ibb.co/nq7Lhs9P/image.jpg" 
+                 alt="测试图片1"
+                 onload="this.parentElement.classList.add('success'); this.parentElement.querySelector('.status').textContent='✅ 加载成功！'; this.parentElement.querySelector('.status').className='status success';"
+                 onerror="this.parentElement.classList.add('error'); this.parentElement.querySelector('.status').textContent='❌ 加载失败'; this.parentElement.querySelector('.status').className='status error';">
+            <div class="status">⏳ 测试中...</div>
+        </div>
+
+        <!-- 测试2：尝试PNG格式 -->
+        <div class="test-item" id="test2">
+            <h3>测试 2：PNG 格式</h3>
+            <div class="link-url">https://i.ibb.co/nq7Lhs9P/image.png</div>
+            <img src="https://i.ibb.co/nq7Lhs9P/image.png" 
+                 alt="测试图片2"
+                 onload="this.parentElement.classList.add('success'); this.parentElement.querySelector('.status').textContent='✅ 加载成功！'; this.parentElement.querySelector('.status').className='status success';"
+                 onerror="this.parentElement.classList.add('error'); this.parentElement.querySelector('.status').textContent='❌ 加载失败'; this.parentElement.querySelector('.status').className='status error';">
+            <div class="status">⏳ 测试中...</div>
+        </div>
+
+        <!-- 测试3：尝试不带扩展名 -->
+        <div class="test-item" id="test3">
+            <h3>测试 3：不带扩展名</h3>
+            <div class="link-url">https://i.ibb.co/nq7Lhs9P/nq7Lhs9P</div>
+            <img src="https://i.ibb.co/nq7Lhs9P/nq7Lhs9P" 
+                 alt="测试图片3"
+                 onload="this.parentElement.classList.add('success'); this.parentElement.querySelector('.status').textContent='✅ 加载成功！'; this.parentElement.querySelector('.status').className='status success';"
+                 onerror="this.parentElement.classList.add('error'); this.parentElement.querySelector('.status').textContent='❌ 加载失败'; this.parentElement.querySelector('.status').className='status error';">
+            <div class="status">⏳ 测试中...</div>
+        </div>
+
+        <!-- 测试4：尝试不同的文件名 -->
+        <div class="test-item" id="test4">
+            <h3>测试 4：可能的文件名组合</h3>
+            <div class="link-url">https://i.ibb.co/nq7Lhs9P/netease-games.jpg</div>
+            <img src="https://i.ibb.co/nq7Lhs9P/netease-games.jpg" 
+                 alt="测试图片4"
+                 onload="this.parentElement.classList.add('success'); this.parentElement.querySelector('.status').textContent='✅ 加载成功！'; this.parentElement.querySelector('.status').className='status success';"
+                 onerror="this.parentElement.classList.add('error'); this.parentElement.querySelector('.status').textContent='❌ 加载失败'; this.parentElement.querySelector('.status').className='status error';">
+            <div class="status">⏳ 测试中...</div>
+        </div>
+
+        <!-- 测试5：使用iframe嵌入 -->
+        <div class="test-item">
+            <h3>测试 5：使用 iframe 嵌入原始页面</h3>
+            <div class="link-url">https://ibb.co/nq7Lhs9P</div>
+            <div class="iframe-test">
+                <iframe src="https://ibb.co/nq7Lhs9P" title="ImgBB页面"></iframe>
+            </div>
+            <div class="status" style="background: #fff3e0; color: #e65100;">⚠️ iframe可能可以显示，但不是最佳方案</div>
+        </div>
+    </div>
+
+    <div class="test-container">
+        <h2>📊 测试结果总结</h2>
+        <div id="summary">
+            <p>请等待测试完成...</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h3>💡 如果以上都不行</h3>
+        <p><strong>请您手动操作：</strong></p>
+        <ol>
+            <li>在浏览器新标签页中打开：<a href="https://ibb.co/nq7Lhs9P" target="_blank">https://ibb.co/nq7Lhs9P</a></li>
+            <li>等待图片加载完成</li>
+            <li>右键点击图片</li>
+            <li>选择"在新标签页中打开图片"或"复制图片地址"</li>
+            <li>将获取到的URL发给我</li>
+        </ol>
+    </div>
+
+    <script>
+        // 等待所有图片加载完成后显示总结
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const tests = document.querySelectorAll('.test-item[id^="test"]');
+                let successCount = 0;
+                let successUrl = '';
+
+                tests.forEach(function(test) {
+                    const img = test.querySelector('img');
+                    if (img && img.complete && img.naturalHeight !== 0) {
+                        successCount++;
+                        if (!successUrl) {
+                            successUrl = test.querySelector('.link-url').textContent;
+                        }
+                    }
+                });
+
+                const summaryDiv = document.getElementById('summary');
+                if (successCount > 0) {
+                    summaryDiv.innerHTML = `
+                        <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50;">
+                            <h3 style="color: #4caf50; margin-top: 0;">✅ 找到可用链接！</h3>
+                            <p><strong>成功数量：</strong> ${successCount} 个</p>
+                            <p><strong>可用链接：</strong></p>
+                            <div style="background: white; padding: 10px; border-radius: 4px; font-family: monospace; word-break: break-all;">
+                                ${successUrl}
+                            </div>
+                            <p style="margin-top: 15px;"><strong>下一步：</strong>请将此链接发给我，我会更新到代码中。</p>
+                        </div>
+                    `;
+                } else {
+                    summaryDiv.innerHTML = `
+                        <div style="background: #ffebee; padding: 15px; border-radius: 8px; border-left: 4px solid #f44336;">
+                            <h3 style="color: #f44336; margin-top: 0;">❌ 自动测试失败</h3>
+                            <p>无法自动找到正确的图片链接。</p>
+                            <p><strong>建议：</strong>请按照上方的手动操作步骤获取正确的链接。</p>
+                        </div>
+                    `;
+                }
+            }, 3000); // 等待3秒让所有图片加载
+        });
+
+        console.log('图片链接测试页面已加载');
+        console.log('正在测试多种可能的ImgBB图片链接格式...');
+    </script>
+</body>
+</html>

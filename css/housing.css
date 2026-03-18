@@ -1,0 +1,752 @@
+/* 安居指南模块样式 */
+
+/* 模块页面基础样式 */
+.housing-module {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fff 0%, #f5f7fa 100%);
+}
+
+/* 模块头部 */
+.module-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-2px);
+}
+
+.back-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.module-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+/* 主内容区域 */
+.module-content {
+    padding: 1rem;
+}
+
+/* 工作地选择区域 */
+.location-section {
+    background: white;
+    margin: 1rem;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.location-section h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.location-selector {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.location-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0.75rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.location-btn.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(230, 0, 18, 0.2);
+}
+
+.location-btn.active .location-name {
+    color: white;
+}
+
+.location-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.location-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.location-hint {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* 办理流程区域 */
+.process-section {
+    background: white;
+    margin: 1rem;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-header h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.status-tag {
+    font-size: 0.6875rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 12px;
+    background: rgba(230, 0, 18, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.status-tag.optional {
+    background: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+}
+
+/* 流程内容 */
+.process-content {
+    min-height: 150px;
+}
+
+.loading-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed var(--border-color);
+}
+
+.loading-placeholder p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+/* 新格式内容样式 */
+.content-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.section-title-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.section-icon {
+    font-size: 1.25rem;
+}
+
+.section-title-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.subsection {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.subsection:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.subsection-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.subsection-title::before {
+    content: '▸';
+    font-size: 0.75rem;
+}
+
+.subsection-content {
+    margin-bottom: 0.5rem;
+}
+
+.subsection-content p {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0.25rem 0;
+}
+
+.subsection-list {
+    margin: 0.5rem 0;
+    padding-left: 1.25rem;
+}
+
+.subsection-list li {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.25rem;
+    position: relative;
+}
+
+.subsection-list li::marker {
+    color: var(--primary-color);
+}
+
+/* 信息框 */
+.info-box {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.875rem;
+    margin-top: 0.75rem;
+}
+
+.info-box-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.625rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-box-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+}
+
+.info-label {
+    color: var(--text-secondary);
+    flex-shrink: 0;
+    min-width: 100px;
+}
+
+.info-value {
+    color: var(--text-primary);
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.info-note {
+    font-size: 0.75rem;
+    color: #ff9800;
+    background: rgba(255, 152, 0, 0.1);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+}
+
+/* 高亮文本样式 */
+.highlight-text {
+    background: linear-gradient(135deg, rgba(230, 0, 18, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
+    border-left: 3px solid var(--primary-color);
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    line-height: 1.5;
+    border-radius: 0 6px 6px 0;
+}
+
+/* 链接卡片 */
+.link-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 0.75rem;
+}
+
+.link-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-sm);
+    transform: translateX(4px);
+}
+
+.link-icon {
+    font-size: 1.25rem;
+}
+
+.link-text {
+    flex: 1;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.link-arrow {
+    font-size: 1.25rem;
+    color: var(--text-light);
+}
+
+/* 条件提示框 */
+.condition-box {
+    background: linear-gradient(135deg, #fff8e1 0%, #fff 100%);
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 0.875rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.condition-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.condition-content {
+    flex: 1;
+}
+
+.condition-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #856404;
+    margin-bottom: 0.25rem;
+}
+
+.condition-text {
+    font-size: 0.8125rem;
+    color: #856404;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.condition-example {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed rgba(255, 193, 7, 0.5);
+}
+
+/* 报销标准表格 */
+.reimburse-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    font-size: 0.8125rem;
+}
+
+.reimburse-table th,
+.reimburse-table td {
+    padding: 0.625rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.reimburse-table th {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.reimburse-table td {
+    color: var(--text-secondary);
+}
+
+.reimburse-table tr:nth-child(even) td {
+    background: #f8f9fa;
+}
+
+/* 响应式设计 */
+@media (min-width: 768px) {
+    .location-selector {
+        gap: 1rem;
+    }
+
+    .location-btn {
+        padding: 1.25rem 1rem;
+    }
+
+    .process-section,
+    .location-section {
+        max-width: 800px;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-selector {
+        flex-direction: column;
+    }
+
+    .location-btn {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .location-icon {
+        margin-bottom: 0;
+    }
+
+    .reimburse-table {
+        font-size: 0.75rem;
+    }
+
+    .reimburse-table th,
+    .reimburse-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    .housing-module {
+        background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+
+    .location-section,
+    .process-section {
+        background: #2d2d2d;
+    }
+
+    .location-section h2,
+    .section-header h2 {
+        color: white;
+    }
+
+    .location-btn {
+        background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+        border-color: #404040;
+    }
+
+    .location-hint {
+        color: #b3b3b3;
+    }
+
+    .loading-placeholder {
+        background: #3d3d3d;
+        border-color: #404040;
+    }
+
+    .content-section {
+        background: #3d3d3d;
+        border-color: #404040;
+    }
+
+    .section-title-text,
+    .subsection-title,
+    .info-box-title,
+    .info-value,
+    .link-text {
+        color: white;
+    }
+
+    .subsection-content p,
+    .subsection-list li,
+    .info-label {
+        color: #b3b3b3;
+    }
+
+    .info-box {
+        background: #2d2d2d;
+        border-color: #404040;
+    }
+
+    .link-card {
+        background: #3d3d3d;
+        border-color: #404040;
+    }
+
+    .link-card:hover {
+        border-color: var(--primary-color);
+    }
+
+    .highlight-text {
+        background: linear-gradient(135deg, rgba(230, 0, 18, 0.2) 0%, rgba(255, 107, 53, 0.2) 100%);
+        color: white;
+    }
+
+    .condition-box {
+        background: linear-gradient(135deg, rgba(255, 193, 7, 0.2) 0%, rgba(255, 152, 0, 0.15) 100%);
+        border-color: #ffc107;
+    }
+
+    .condition-title,
+    .condition-text {
+        color: #ffd54f;
+    }
+
+    .condition-example {
+        color: #b3b3b3;
+        border-color: rgba(255, 193, 7, 0.3);
+    }
+
+    .reimburse-table td {
+        color: #b3b3b3;
+    }
+
+    .reimburse-table tr:nth-child(even) td {
+        background: #3d3d3d;
+    }
+}
+
+/* 阅读导航 */
+.reading-nav {
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+.nav-item:hover {
+    transform: translateX(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-color: var(--primary-color);
+}
+
+.nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-item.active .nav-dot {
+    background: white;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.nav-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.nav-item.active .nav-label {
+    color: white;
+    font-weight: 600;
+}
+
+/* 响应式设计 - 小屏幕显示折叠导航 */
+@media (max-width: 1024px) {
+    .reading-nav {
+        right: 0.5rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        padding: 0.5rem;
+        background: white;
+        border-radius: 8px 0 0 8px;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle:hover {
+        background: #f8f9fa;
+    }
+
+    .nav-icon {
+        font-size: 1rem;
+    }
+
+    .nav-text {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        letter-spacing: 0.25rem;
+    }
+
+    .nav-items {
+        position: absolute;
+        right: 100%;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-right: 0.5rem;
+        background: white;
+        border-radius: 8px 0 0 8px;
+        box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+        animation: slideIn 0.3s ease;
+    }
+
+    .reading-nav:hover .nav-items,
+    .reading-nav.expanded .nav-items {
+        display: flex;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+    .nav-item {
+        background: #2d2d2d;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-label {
+        color: #b3b3b3;
+    }
+
+    .nav-toggle {
+        background: #2d2d2d;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-text {
+        color: white;
+    }
+
+    .reading-nav:hover .nav-items,
+    .reading-nav.expanded .nav-items {
+        background: #2d2d2d;
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>安居指南 - 网易互娱校招生指南</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/housing.css">
+</head>
+<body>
+    <!-- 模块：安居指南 -->
+    <div class="module-page housing-module">
+        <!-- 顶部导航 -->
+        <header class="module-header">
+            <button class="back-btn" onclick="goHome()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            <h1>安居指南</h1>
+        </header>
+
+        <!-- 主内容区域 -->
+        <main class="module-content">
+            <!-- 工作地选择 -->
+            <section class="location-section" id="section-location">
+                <h2>📍 请选择您的工作地</h2>
+                <div class="location-selector">
+                    <button class="location-btn active" data-location="guangzhou">
+                        <span class="location-icon">🏢</span>
+                        <span class="location-name">广州</span>
+                    </button>
+                    <button class="location-btn" data-location="shanghai">
+                        <span class="location-icon">🏢</span>
+                        <span class="location-name">上海</span>
+                    </button>
+                    <button class="location-btn" data-location="hangzhou">
+                        <span class="location-icon">🏢</span>
+                        <span class="location-name">杭州</span>
+                    </button>
+                </div>
+                <p class="location-hint">请根据您的offer选择对应的工作地</p>
+            </section>
+
+            <!-- 交通报销 -->
+            <section class="process-section" id="section-transport">
+                <div class="section-header">
+                    <h2>🚄 交通报销</h2>
+                    <span class="status-tag">重要</span>
+                </div>
+                <div class="process-content" id="transport-content">
+                    <!-- 内容将通过JavaScript动态加载 -->
+                    <div class="loading-placeholder">
+                        <p>请先选择工作地</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 周边租房 -->
+            <section class="process-section" id="section-renting">
+                <div class="section-header">
+                    <h2>🏠 周边租房</h2>
+                    <span class="status-tag optional">住宿指南</span>
+                </div>
+                <div class="process-content" id="renting-content">
+                    <!-- 内容将通过JavaScript动态加载 -->
+                    <div class="loading-placeholder">
+                        <p>请先选择工作地</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 阅读导航 -->
+        <nav class="reading-nav">
+            <div class="nav-toggle">
+                <span class="nav-icon">📖</span>
+                <span class="nav-text">目录</span>
+            </div>
+            <div class="nav-items">
+                <a href="#section-location" class="nav-item active" data-section="section-location">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">工作地选择</span>
+                </a>
+                <a href="#section-transport" class="nav-item" data-section="section-transport">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">交通报销</span>
+                </a>
+                <a href="#section-renting" class="nav-item" data-section="section-renting">
+                    <span class="nav-dot"></span>
+                    <span class="nav-label">周边租房</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <script src="js/housing.js"></script>
+</body>
+</html>
