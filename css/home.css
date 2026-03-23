@@ -1,4 +1,19 @@
-/* 首页样式 */
+/* 欢迎图片样式 */
+.welcome-image {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 120px;
+    height: auto;
+    z-index: 1;
+    /* 临时添加红色边框用于调试 */
+    border: 2px solid red;
+}
+
+/* 覆盖原有overflow设置 */
+.welcome-section {
+    overflow: visible !important;
+}/* 首页样式 */
 
 /* 欢迎区域 */
 .home-page {

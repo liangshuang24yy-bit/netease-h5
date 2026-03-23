@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>新人必修 - 网易校招生指南</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/courses.css">
+</head>
+<body>
+    <!-- 模块：新人必修 -->
+    <div class="module-page courses-module">
+        <!-- 顶部导航 -->
+        <header class="module-header">
+            <button class="back-btn" onclick="goHome()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            <h1>新人必修</h1>
+        </header>
+
+        <!-- 主内容区域 -->
+        <main class="module-content">
+            <!-- 筛选器 -->
+            <section class="filter-section">
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="info">闯关任务</button>
+                    <button class="filter-btn" data-filter="society">soci小课堂</button>
+                </div>
+            </section>
+
+            <!-- 资讯时间线 -->
+            <section class="timeline-section" id="section-timeline">
+                <div class="timeline-container">
+                    <!-- 时间线内容将通过JS动态生成 -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/courses.js"></script>
+</body>
+</html>
