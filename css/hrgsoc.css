@@ -1,0 +1,242 @@
+/* 找HRGSOC模块样式 */
+
+/* 模块页面基础样式 */
+.hrgsoc-module {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fff 0%, #f5f7fa 100%);
+}
+
+/* 模块头部 */
+.module-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-2px);
+}
+
+.back-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.module-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+/* 主内容区域 */
+.module-content {
+    padding: 1rem;
+}
+
+/* HRGSOC介绍区域 */
+.hrgsoc-section {
+    background: white;
+    margin: 1rem;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.hrgsoc-section h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.section-desc {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin: 0 0 1.25rem 0;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* 图片容器 */
+.hrgsoc-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.hrgsoc-image {
+    max-width: 50%; /* 缩小一倍 */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hrgsoc-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 联系方式区域 */
+.contact-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    padding: 1.25rem;
+    color: #fff;
+}
+
+.contact-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+/* 图片预览模态框 */
+.image-preview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    cursor: pointer;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.image-preview-overlay.active {
+    display: flex;
+}
+
+.image-preview-container {
+    position: relative;
+    max-width: 95%;
+    max-height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-preview-img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.preview-close-btn {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.2s ease;
+}
+
+.preview-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hrgsoc-section {
+        padding: 1rem;
+    }
+
+    .hrgsoc-section h2 {
+        font-size: 1rem;
+    }
+
+    .section-desc {
+        font-size: 0.8125rem;
+    }
+
+    .contact-info {
+        padding: 1rem;
+    }
+
+    .contact-info h3 {
+        font-size: 0.9375rem;
+    }
+
+    .contact-info p {
+        font-size: 0.8125rem;
+    }
+}
+
+/* 暗色模式适配 */
+@media (prefers-color-scheme: dark) {
+    .hrgsoc-module {
+        background: linear-gradient(180deg, #121212 0%, #1a1a1a 100%);
+    }
+
+    .hrgsoc-section {
+        background: var(--card-bg, #1e1e1e);
+    }
+
+    .hrgsoc-section h2 {
+        color: var(--text-primary, #fff);
+    }
+
+    .section-desc {
+        color: var(--text-secondary, #aaa);
+    }
+}

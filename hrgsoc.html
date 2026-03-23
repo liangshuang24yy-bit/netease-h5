@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>找HRGSOC - 网易校招生指南</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hrgsoc.css">
+</head>
+<body>
+    <!-- 模块：找HRGSOC -->
+    <div class="module-page hrgsoc-module">
+        <!-- 顶部导航 -->
+        <header class="module-header">
+            <button class="back-btn" onclick="goHome()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            <h1>找HRGSOC</h1>
+        </header>
+
+        <!-- 主内容区域 -->
+        <main class="module-content">
+            <!-- HRGSOC介绍 -->
+            <section class="hrgsoc-section" id="section-intro">
+                <h2>💬 HRGSOC 服务介绍</h2>
+                <p class="section-desc">人力资源共享服务中心 - 您的全职入职支持伙伴</p>
+
+                <div class="hrgsoc-image-container">
+                    <img src="images/HRGSOC介绍名片-校招.png" alt="HRGSOC介绍名片" class="hrgsoc-image" onclick="openImagePreview(this.src)">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 图片预览模态框 -->
+    <div class="image-preview-overlay" id="imagePreview" onclick="closeImagePreview()">
+        <div class="image-preview-container" onclick="event.stopPropagation()">
+            <img src="" alt="预览" class="image-preview-img" id="previewImg">
+            <button class="preview-close-btn" onclick="closeImagePreview()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="js/hrgsoc.js"></script>
+</body>
+</html>

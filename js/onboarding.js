@@ -71,7 +71,7 @@ const locationData = {
                             ],
                             steps: [
                                 '需先确认目前档案保管单位全称',
-                                '正式入职后联系HR共享运营中心办理档案调入'
+                                '正式<strong style="color: red;">入职后</strong>联系HR共享运营中心办理档案调入'
                             ]
                         },
                         {
@@ -131,32 +131,13 @@ const locationData = {
                         },
                         {
                             content: [
-                                '具体转入操作需入职后方可进行，避免政策变更影响，建议正式办理转入前先沟通确认'
+                                '具体转入操作需<strong style="color: red;">入职后</strong>方可进行，避免政策变更影响，建议正式办理转入前先沟通确认'
                             ]
                         },
                         {
                             content: [
-                                '入职后按照上述指引备齐资料后，提交给党建同学'
+                                '<strong style="color: red;">入职后</strong>按照上述指引备齐资料后，提交给党建同学'
                             ]
-                        }
-                    ]
-                },
-                {
-                    title: '提交指引',
-                    icon: '📮',
-                    subsections: [
-                        {
-                            content: [
-                                '将资料拿到办公点的前台小姐姐处，通过前台穿梭巴士寄送（高唐一期、二期的同学可以直接线下提交资料）'
-                            ],
-                            infoBox: {
-                                title: '寄送信息',
-                                items: [
-                                    { label: '寄往', value: '高唐二期' },
-                                    { label: '接收人', value: '党建|高唐二期' },
-                                    { label: 'POPO', value: 'grp.dangban01@corp.netease.com' }
-                                ]
-                            }
                         }
                     ]
                 }
@@ -164,13 +145,6 @@ const locationData = {
             link: {
                 text: '【广州】党组织关系转入流程',
                 url: 'https://mp.popo.netease.com/pt/show?identify=AM2SDOV45u7Bu993gcegEO'
-            },
-            contact: {
-                title: '咨询联系方式',
-                name: '赵越',
-                email: 'zhaoyue05@corp.netease.com',
-                extraEmail: 'grp.dangban01@corp.netease.com',
-                hint: '或通过POPO工作台选 HRhelp 应用进行咨询'
             }
         }
     },
@@ -275,12 +249,12 @@ const locationData = {
                 {
                     title: '境内和境外学历档案户口挂靠所需材料',
                     icon: '📄',
-                    note: '办理落户要求先转入人事档案，境外学历需先确认目前档案保管的机构全称，正式入职后联系HR共享运营中心办理档案调入。',
-                    warning: {
+                    note: '办理落户要求先转入人事档案，境外学历需先确认目前档案保管的机构全称，正式<strong style="color: red;">入职后</strong>联系HR共享运营中心办理档案调入。',
+                        warning: {
                         text: '如流程图清晰度不足，请前往《互娱校招生入职初期适用手册》查阅',
                         link: {
                             text: '互娱校招生入职初期适用手册',
-                            url: 'https://docs.popo.netease.com/lingxi/49d7a411e8684d21a5273b3e3a07d8ff'
+                            url: 'https://docs.popo.netease.com/lingxi/49d7a411e8684d21a5273b3e3a07d8ff?xyz=1773820567879#6u8n-1773208774141'
                         }
                     },
                     subsections: [
@@ -317,7 +291,7 @@ const locationData = {
             ]
         },
         league: {
-            content: '由原团组织在"智慧团建"发起申请，组织全称：<strong>浙江省杭州市滨江区网易（杭州）网络有限公司团委</strong>，转移申请中写明自己所属的工作部门和岗位，待正式入职后公司会确认接收。'
+            content: '由原团组织在"智慧团建"发起申请，组织全称：<strong>浙江省杭州市滨江区网易（杭州）网络有限公司团委</strong>，转移申请中写明自己所属的工作部门和岗位，待正式<strong style="color: red;">入职后</strong>公司会确认接收。'
         },
         party: {
             sections: [
@@ -345,7 +319,7 @@ const locationData = {
                             list: [
                                 '抬头写"中共网易(杭州)网络有限公司委员会"',
                                 '去向写"中共网易综合第一支部委员会"',
-                                '介绍信先自行留存，待入职后参考步骤二办理（请关注介绍信的有效期）'
+                                '介绍信先自行留存，待<strong style="color: red;">入职后</strong>参考步骤二办理（请关注介绍信的有效期）'
                             ]
                         },
                         {
@@ -356,7 +330,7 @@ const locationData = {
                         {
                             title: '步骤二：提交报到材料',
                             content: [
-                                '待毕业正式入职后，使用公司邮箱发送党员报到材料至公司党委审核处理，具体流程可入职后通过内部门户-易网 搜索"党组织关系转移"，或内部软件POPO-应用-hrhelp搜索"党组织关系转移"查看具体流程和材料要求。'
+                                '待毕业正式<strong style="color: red;">入职后</strong>，使用公司邮箱发送党员报到材料至公司党委审核处理，具体流程可<strong style="color: red;">入职后</strong>通过内部门户-易网 搜索"党组织关系转移"，或内部软件POPO-应用-hrhelp搜索"党组织关系转移"查看具体流程和材料要求。'
                             ]
                         }
                     ]
@@ -367,7 +341,7 @@ const locationData = {
                     subsections: [
                         {
                             content: [
-                                '上述附件在入职后可关注popo服务号"网易党委"获取并详细了解。'
+                                '上述附件在<strong style="color: red;">入职后</strong>可关注popo服务号"网易党委"获取并详细了解。'
                             ]
                         },
                         {
