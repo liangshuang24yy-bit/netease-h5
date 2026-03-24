@@ -4,7 +4,7 @@
 const coursesData = [
     {
         date: '3月23日',
-        title: '【艺术通识】帖子现已开放...',
+        title: '【艺术通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
         tags: [
             { type: 'info', text: '闯关任务' },
