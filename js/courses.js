@@ -3,6 +3,16 @@
 // 资讯数据
 const coursesData = [
     {
+        date: '3月23日',
+        title: '【艺术通识】帖子现已开放...',
+        tagType: 'info',
+        tags: [
+            { type: 'info', text: '闯关任务' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://ks.wjx.com/vm/Yj1hyAM.aspx#'
+    },
+    {
         date: '3月16日',
         title: '【程序通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
@@ -14,7 +24,7 @@ const coursesData = [
     },
     {
         date: '3月11日',
-        title: '【SOCI简报】Soci小助进驻啦~HR相关服务咨询小助手常在你身边~',
+        title: '【SOCI简报】Soci小助进驻新人培训popo群啦~HR相关服务咨询小助手常在你身边~',
         tagType: 'society',
         tags: [
             { type: 'society', text: 'soci小课堂' },

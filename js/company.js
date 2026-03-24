@@ -19,115 +19,16 @@ document.addEventListener('DOMContentLoaded', function() {
 // VR按钮初始化
 function initVRButtons() {
     const vrButtons = document.querySelectorAll('.vr-btn');
-    const vrModal = document.getElementById('vrModal');
-
-    // 如果没有VR按钮或模态框，直接返回
-    if (vrButtons.length === 0 || !vrModal) {
-        console.log('VR功能未初始化：缺少VR按钮或模态框');
-        return;
-    }
-
-    const closeModal = document.querySelector('.close-modal');
-    const vrTitle = document.getElementById('vrTitle');
-    const vrDescription = document.getElementById('vrDescription');
-
-    if (!closeModal || !vrTitle || !vrDescription) {
-        console.log('VR功能未完全初始化：缺少必要的模态框元素');
-        return;
-    }
-
-    // VR数据配置
-    const vrData = {
-        guangzhou: {
-            title: '广州园区',
-            description: '网易广州总部位于天河区，占地面积广阔，现代化办公环境，拥有完善的配套设施。园区内有健身房、餐厅、咖啡厅等生活设施，为员工提供舒适的工作环境。',
-            url: 'https://www.720yun.com/t/a3vkbefbg7y?scene_id=88507574'
-        },
-        shanghai: {
-            title: '上海园区',
-            description: '网易上海分部位于浦东新区，紧邻张江高科技园区。现代简约的设计风格，开放式办公空间，融合了科技与人文的完美结合。',
-            url: 'https://www.720yun.com/t/a3vkbefbg7y?scene_id=128956779'
-        },
-        hangzhou: {
-            title: '杭州园区',
-            description: '网易杭州基地位于余杭区，坐落于美丽的西溪湿地旁。园林式办公环境，将自然与科技完美融合，为员工创造灵感的源泉。',
-            url: 'https://www.720yun.com/t/a3vkbefbg7y?scene_id=88507644'
-        }
-    };
-
-    // VR按钮点击事件
+    
     vrButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const vrType = this.dataset.vr;
-            const vrUrl = this.dataset.url || vrData[vrType].url;
-            const data = vrData[vrType];
-
-            if (data && vrUrl) {
-                vrTitle.textContent = data.title;
-                vrDescription.textContent = data.description;
-                vrModal.classList.add('active');
-
-                // 加载VR全景
-                loadVRViewer(vrUrl, vrType);
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const vrUrl = this.dataset.url;
+            if (vrUrl) {
+                window.open(vrUrl, '_blank');
             }
         });
     });
-
-    // 关闭模态框
-    closeModal.addEventListener('click', function() {
-        vrModal.classList.remove('active');
-        // 清空VR查看器内容以停止VR加载
-        const vrViewer = document.querySelector('.vr-viewer');
-        vrViewer.innerHTML = '';
-    });
-
-    // 点击模态框外部关闭
-    vrModal.addEventListener('click', function(e) {
-        if (e.target === vrModal) {
-            vrModal.classList.remove('active');
-            // 清空VR查看器内容以停止VR加载
-            const vrViewer = document.querySelector('.vr-viewer');
-            vrViewer.innerHTML = '';
-        }
-    });
-
-    // ESC键关闭模态框
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && vrModal.classList.contains('active')) {
-            vrModal.classList.remove('active');
-            // 清空VR查看器内容以停止VR加载
-            const vrViewer = document.querySelector('.vr-viewer');
-            vrViewer.innerHTML = '';
-        }
-    });
-}
-
-// 加载VR全景查看器
-function loadVRViewer(vrUrl, vrType) {
-    const vrViewer = document.querySelector('.vr-viewer');
-
-    // 显示加载动画
-    vrViewer.innerHTML = `
-        <div class="vr-loading">
-            <div class="loading-spinner"></div>
-            <p>正在加载${vrType}园区VR全景...</p>
-        </div>
-    `;
-
-    // 延迟加载VR iframe
-    setTimeout(function() {
-        // 使用iframe嵌入720云VR全景
-        vrViewer.innerHTML = `
-            <iframe
-                src="${vrUrl}"
-                frameborder="0"
-                allowfullscreen
-                allow="xr-spatial-tracking; gyroscope; accelerometer"
-                class="vr-iframe"
-                title="${vrType}园区VR全景">
-            </iframe>
-        `;
-    }, 500);
 }
 
 // 视频播放初始化
