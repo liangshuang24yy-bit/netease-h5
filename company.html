@@ -26,20 +26,11 @@
             <section class="video-section" id="section-video">
                 <h2>🎬 视频快速了解</h2>
                 <div class="video-container">
-                    <a href="https://docs.popo.netease.com/lingxi/e301f371046b4f4784a1e0e86e34cfad" target="_blank" class="video-link">
-                        <div class="video-placeholder" style="background-image: url('https://i.ibb.co/XfZCy275/image.jpg'); background-size: cover; background-position: center;">
-                            <div class="video-overlay"></div>
-                            <button class="play-button">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </button>
-                            <div class="video-info">
-                                <p>两分钟了解网易</p>
-                                <span>点击播放</span>
-                            </div>
-                        </div>
-                    </a>
+                    <!-- 内嵌视频播放器 - 点击即可在原页面播放，支持手机端 -->
+                    <video id="companyVideo" controls playsinline webkit-playsinline style="width: 100%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); background: #000;" poster="https://i.ibb.co/XfZCy275/image.jpg">
+                        <source src="images/netease-intro.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放，请升级浏览器
+                    </video>
                 </div>
             </section>
 
