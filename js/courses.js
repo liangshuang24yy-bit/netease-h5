@@ -130,7 +130,7 @@ function renderTimeline(filterType = currentFilter) {
         // 生成链接或提示HTML
         let linkHtml = '';
         if (item.link) {
-            linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">前往学习</a>`;
+            linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">前往考验</a>`;
         } else {
             linkHtml = `<span class="timeline-hint">请关注内部通知</span>`;
         }
