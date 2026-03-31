@@ -3,6 +3,16 @@
 // 资讯数据
 const coursesData = [
     {
+        date: '3月30日',
+        title: '【QA通识】帖子现已开放，请前往游学自行学习',
+        tagType: 'info',
+        tags: [
+            { type: 'info', text: '闯关任务' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://ks.wjx.com/vm/OXmbcwr.aspx#'
+    },
+    {
         date: '3月23日',
         title: '【艺术通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
