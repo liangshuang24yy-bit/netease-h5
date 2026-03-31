@@ -3,6 +3,16 @@
 // 资讯数据
 const coursesData = [
     {
+        date: '3月31日',
+        title: '【SOCI简报】Soci出发站震撼首发！各类"干货"汇聚一堂，你不仅可以获悉档户处理、交通报销等指引流程，还可以在VR实景里提前逛园区，更有周边租房攻略等你来看！有问题？点击右下方Soci头像进入hrhelp咨询。欢迎点击站内小窗口，反馈你的意见~',
+        tagType: 'society',
+        tags: [
+            { type: 'society', text: 'soci小课堂' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://soci.popo.lcap.163yun.com/index/index'
+    },
+    {
         date: '3月30日',
         title: '【QA通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
