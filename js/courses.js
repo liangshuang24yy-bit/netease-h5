@@ -4,6 +4,16 @@
 const coursesData = [
     {
         date: '3月31日',
+        title: '【AI小课堂】也给大家带来了关于openclaw的介绍，帮助大家了解~',
+        tagType: 'info',
+        tags: [
+            { type: 'info', text: 'NPC任务' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://game.academy.163.com/training/course/764'
+    },
+    {
+        date: '3月31日',
         title: '【SOCI简报】Soci出发站震撼首发！各类"干货"汇聚一堂，你不仅可以获悉档户处理、交通报销等指引流程，还可以在VR实景里提前逛园区，更有周边租房攻略等你来看！有问题？点击右下方Soci头像进入hrhelp咨询。欢迎点击站内小窗口，反馈你的意见~',
         tagType: 'society',
         tags: [
@@ -17,7 +27,7 @@ const coursesData = [
         title: '【QA通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
         tags: [
-            { type: 'info', text: '闯关任务' },
+            { type: 'info', text: 'NPC任务' },
             { type: 'group', text: '全序列' }
         ],
         link: 'https://ks.wjx.com/vm/OXmbcwr.aspx#'
@@ -27,7 +37,7 @@ const coursesData = [
         title: '【艺术通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
         tags: [
-            { type: 'info', text: '闯关任务' },
+            { type: 'info', text: 'NPC任务' },
             { type: 'group', text: '全序列' }
         ],
         link: 'https://ks.wjx.com/vm/Yj1hyAM.aspx#'
@@ -37,7 +47,7 @@ const coursesData = [
         title: '【程序通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
         tags: [
-            { type: 'info', text: '闯关任务' },
+            { type: 'info', text: 'NPC任务' },
             { type: 'group', text: '全序列' }
         ],
         link: 'https://ks.wjx.com/vm/eInIXFY.aspx#'
@@ -57,7 +67,7 @@ const coursesData = [
         title: '【策划通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
         tags: [
-            { type: 'info', text: '闯关任务' },
+            { type: 'info', text: 'NPC任务' },
             { type: 'group', text: '全序列' }
         ],
         link: 'https://163.lu/uW8Nrs'
@@ -67,7 +77,7 @@ const coursesData = [
         title: '【游戏行业通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
         tags: [
-            { type: 'info', text: '闯关任务' },
+            { type: 'info', text: 'NPC任务' },
             { type: 'group', text: '全序列' }
         ],
         link: 'https://163.lu/3PLHGQ'
@@ -149,8 +159,9 @@ function renderTimeline(filterType = currentFilter) {
 
         // 生成链接或提示HTML
         let linkHtml = '';
-        if (item.link) {
-            linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">前往考验</a>`;
+if (item.link) {
+            const btnText = item.date === '3月31日' ? '前往了解' : '前往考验';
+            linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">${btnText}</a>`;
         } else {
             linkHtml = `<span class="timeline-hint">请关注内部通知</span>`;
         }

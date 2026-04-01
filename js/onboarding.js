@@ -86,7 +86,7 @@ const locationData = {
                     title: '落户材料下载及指引',
                     icon: '📄',
                     link: {
-                        text: '2025年应届生档户办理指引',
+                        text: '2026年应届生档户办理指引',
                         url: 'https://note.youdao.com/ynoteshare/index.html?id=ba600022cc3e675938b3892ee560bcd4&type=note&_time=1743581549485'
                     }
                 }
