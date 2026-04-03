@@ -201,8 +201,8 @@ const locationData = {
             },
             contact: {
                 title: '咨询联系方式',
-                name: '王佳雯',
-                email: 'wangjiawen10@corp.netease.com'
+                name: '周颖静',
+                email: 'yjzhou@corp.netease.com'
             }
         }
     },
