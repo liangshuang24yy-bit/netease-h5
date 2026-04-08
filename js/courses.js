@@ -3,6 +3,26 @@
 // 资讯数据
 const coursesData = [
     {
+        date: '4月8日',
+        title: '【SOCI小课堂】开课！一起来了解，五险一金是什么？',
+        tagType: 'society',
+        tags: [
+            { type: 'society', text: 'soci小课堂' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://docs.popo.netease.com/lingxi/fc590107b0c0478faaab266a515ff8c6'
+    },
+    {
+        date: '4月7日',
+        title: '【PM通识】PM术语百科帖子现已开放，请前往游学自行学习',
+        tagType: 'info',
+        tags: [
+            { type: 'info', text: 'NPC任务' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://ks.wjx.com/vm/YETMBT5.aspx#'
+    },
+    {
         date: '3月31日',
         title: '【AI小课堂】也给大家带来了关于openclaw的介绍，帮助大家了解~',
         tagType: 'info',
@@ -159,8 +179,8 @@ function renderTimeline(filterType = currentFilter) {
 
         // 生成链接或提示HTML
         let linkHtml = '';
-if (item.link) {
-            const btnText = item.date === '3月31日' ? '前往了解' : '前往考验';
+        if (item.link) {
+            const btnText = item.date === '3月31日' || item.date === '4月8日' ? '前往了解' : '前往考验';
             linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">${btnText}</a>`;
         } else {
             linkHtml = `<span class="timeline-hint">请关注内部通知</span>`;
