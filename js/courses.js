@@ -3,6 +3,26 @@
 // 资讯数据
 const coursesData = [
     {
+        date: '4月22日',
+        title: '【SOCI小课堂】商业保险是什么？',
+        tagType: 'society',
+        tags: [
+            { type: 'society', text: 'soci小课堂' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://docs.popo.netease.com/lingxi/fc590107b0c0478faaab266a515ff8c6?xyz=1776823451946&appVersion=4.37.1&deviceType=0&popo_hidenativebar=1&popo_noindicator=1&disposable_login_token=1&xyz=1776824924794#edit'
+    },
+    {
+        date: '4月20日',
+        title: '本月【审美提升】的主题为『叙事表达』，涵盖四门课程~请自行前往学习',
+        tagType: 'info',
+        tags: [
+            { type: 'info', text: 'NPC任务' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: null
+    },
+    {
         date: '4月15日',
         title: '【SOCI小课堂】五险一金的钱去哪了？',
         tagType: 'society',
@@ -200,7 +220,7 @@ function renderTimeline(filterType = currentFilter) {
         // 生成链接或提示HTML
         let linkHtml = '';
         if (item.link) {
-            const btnText = item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' ? '前往了解' : '前往考验';
+            const btnText = item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' || item.date === '4月22日' ? '前往了解' : '前往考验';
             linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">${btnText}</a>`;
         } else {
             linkHtml = `<span class="timeline-hint">请关注内部通知</span>`;
