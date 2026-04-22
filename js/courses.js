@@ -10,7 +10,7 @@ const coursesData = [
             { type: 'society', text: 'soci小课堂' },
             { type: 'group', text: '全序列' }
         ],
-        link: 'https://docs.popo.netease.com/lingxi/fc590107b0c0478faaab266a515ff8c6?xyz=1776823451946&appVersion=4.37.1&deviceType=0&popo_hidenativebar=1&popo_noindicator=1&disposable_login_token=1&xyz=1776824924794#edit'
+        link: 'https://docs.popo.netease.com/lingxi/fc590107b0c0478faaab266a515ff8c6?xyz=1776823451946&appVersion=4.37.1&deviceType=0&popo_hidenativebar=1&popo_noindicator=1&disposable_login_token=1&xyz=1776840813025#KOA_2N_uW'
     },
     {
         date: '4月20日',
