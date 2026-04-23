@@ -93,6 +93,16 @@ const coursesData = [
         link: 'https://ks.wjx.com/vm/OXmbcwr.aspx#'
     },
     {
+        date: '3月25日',
+        title: '【SOCI小课堂】Soci带你了解网易的那些事儿！先花2分钟，到首页【公司初识】看看网易的故事，再玩个游戏，解锁7个彩蛋！',
+        tagType: 'society',
+        tags: [
+            { type: 'society', text: 'soci小课堂' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'http://xiaozhao260319.popo.lcap.163yun.com/m/index/CampusRecruitment'
+    },
+    {
         date: '3月23日',
         title: '【艺术通识】帖子现已开放，请前往游学自行学习',
         tagType: 'info',
@@ -220,7 +230,7 @@ function renderTimeline(filterType = currentFilter) {
         // 生成链接或提示HTML
         let linkHtml = '';
         if (item.link) {
-            const btnText = item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' || item.date === '4月22日' ? '前往了解' : '前往考验';
+            const btnText = item.date === '3月25日' ? '进入游戏' : (item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' || item.date === '4月22日' ? '前往了解' : '前往考验');
             linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">${btnText}</a>`;
         } else {
             linkHtml = `<span class="timeline-hint">请关注内部通知</span>`;
