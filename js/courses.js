@@ -3,6 +3,16 @@
 // 资讯数据
 const coursesData = [
     {
+        date: '4月23日',
+        title: '网易游戏高校MINI GAME挑战赛21号已全面火热开启！详情请关注新人群资讯~~',
+        tagType: 'info',
+        tags: [
+            { type: 'info', text: 'NPC任务' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://survey.hz.netease.com/htmls/akezvs/paper_internal.html'
+    },
+    {
         date: '4月22日',
         title: '【SOCI小课堂】商业保险是什么？',
         tagType: 'society',
@@ -230,7 +240,7 @@ function renderTimeline(filterType = currentFilter) {
         // 生成链接或提示HTML
         let linkHtml = '';
         if (item.link) {
-            const btnText = item.date === '3月25日' ? '进入游戏' : (item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' || item.date === '4月22日' ? '前往了解' : '前往考验');
+            const btnText = item.date === '3月25日' ? '进入游戏' : (item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' || item.date === '4月22日' || item.date === '4月23日' ? '前往了解' : '前往考验');
             linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">${btnText}</a>`;
         } else {
             linkHtml = `<span class="timeline-hint">请关注内部通知</span>`;
