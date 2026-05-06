@@ -3,6 +3,16 @@
 // 资讯数据
 const coursesData = [
     {
+        date: '5月6日',
+        title: '【SOCI小课堂】网易年假介绍！',
+        tagType: 'society',
+        tags: [
+            { type: 'society', text: 'soci小课堂' },
+            { type: 'group', text: '全序列' }
+        ],
+        video: 'netease annual leave260506.mp4'
+    },
+    {
         date: '4月29日',
         title: '【SOCI小课堂】个税专项附加扣除，你的减税好帮手~',
         tagType: 'society',
@@ -247,9 +257,18 @@ function renderTimeline(filterType = currentFilter) {
             }
         });
 
-        // 生成链接或提示HTML
+        // 生成链接、视频或提示HTML
         let linkHtml = '';
-        if (item.link) {
+        if (item.video) {
+            linkHtml = `
+                <div class="timeline-video">
+                    <video controls class="timeline-video-player">
+                        <source src="../images/${item.video}" type="video/mp4">
+                        您的浏览器不支持视频播放
+                    </video>
+                </div>
+            `;
+        } else if (item.link) {
             const btnText = item.date === '3月25日' ? '进入游戏' : (item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' || item.date === '4月22日' || item.date === '4月23日' || item.date === '4月29日' ? '前往了解' : '前往考验');
             linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">${btnText}</a>`;
         } else {
