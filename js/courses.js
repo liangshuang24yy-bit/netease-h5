@@ -10,7 +10,7 @@ const coursesData = [
             { type: 'society', text: 'soci小课堂' },
             { type: 'group', text: '全序列' }
         ],
-        video: 'netease annual leave260506.mp4'
+        video: 'neteaseannualleave260506.mp4'
     },
     {
         date: '4月29日',
