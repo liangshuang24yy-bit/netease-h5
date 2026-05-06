@@ -364,26 +364,38 @@
     }
 }
 
-/* 视频样式 - 参考公司初识页面尺寸 */
-.timeline-video {
+/* 视频播放器样式 */
+.video-player-container {
     margin-top: 1rem;
-    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.timeline-video-player {
+.timeline-video {
+    max-width: 800px;
     width: 100%;
-    max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16 / 9;
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     background: #000;
 }
 
-/* 响应式视频尺寸 */
-@media (min-width: 768px) {
-    .timeline-video-player {
-        max-width: 85%;
-        margin: 0 auto;
-        display: block;
+.timeline-video::-webkit-media-controls {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.timeline-video::-webkit-media-controls-play-button,
+.timeline-video::-webkit-media-controls-fullscreen-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+}
+
+/* 响应式视频播放器 */
+@media (max-width: 768px) {
+    .timeline-video {
+        max-width: 100%;
+        border-radius: 6px;
     }
 }
