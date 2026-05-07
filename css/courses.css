@@ -364,26 +364,23 @@
     }
 }
 
-/* 视频样式 - 参考公司初识页面尺寸 */
+/* 视频样式 - 精确尺寸控制 */
 .timeline-video {
     margin-top: 1rem;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .timeline-video-player {
     width: 100%;
-    max-width: 100%;
+    max-width: 800px;
     height: auto;
+    max-height: 75vh;
+    aspect-ratio: 16/9;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background: #000;
-}
-
-/* 响应式视频尺寸 */
-@media (min-width: 768px) {
-    .timeline-video-player {
-        max-width: 85%;
-        margin: 0 auto;
-        display: block;
-    }
+    display: block;
+    margin: 0 auto;
 }
