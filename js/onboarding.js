@@ -165,7 +165,8 @@ const locationData = {
                         {
                             title: '户口挂靠',
                             content: [
-                                '公司暂无集体户口，因此您无法直接落户至公司集体户。如您有落户上海的需求，公司可协助您办理上海应届生落户相关手续，您可通过上述咨询通道告知HR共享运营中心，我们将以邮件形式提供您最新的落户流程指引。后续请按照邮件要求提交相关材料，并签署相应落户协议。'
+                                '公司暂无集体户口，因此您无法直接落户至公司集体户。',
+                                '<a href="https://sh.bendibao.com/zffw/luohu/" target="_blank" rel="noopener noreferrer" style="color: #1890ff; font-weight: bold; text-decoration: underline;">上海落户政策</a>可点击查阅。如您有落户上海的需求，您可邮件联系grp.shhrssc3@corp.netease.com，详细告知我们您个人的基本情况和落户需求。后续可按照邮件指引准备相关材料。'
                             ]
                         },
                         {
