@@ -3,6 +3,16 @@
 // 资讯数据
 const coursesData = [
     {
+        date: '6月12日',
+        title: '【SOCI小课堂】入职材料提交！了解这些注意事项，提交更顺利~',
+        tagType: 'society',
+        tags: [
+            { type: 'society', text: 'soci小课堂' },
+            { type: 'group', text: '全序列' }
+        ],
+        link: 'https://docs.popo.netease.com/lingxi/fc590107b0c0478faaab266a515ff8c6?xyz=1781248367707&appVersion=4.43.0&deviceType=0&popo_hidenativebar=1&popo_noindicator=1&disposable_login_token=1&xyz=1781248460085#LKJtMvmLd'
+    },
+    {
         date: '6月3日',
         title: '【SOCI小课堂】公积金租房提取介绍~',
         tagType: 'society',
@@ -319,7 +329,7 @@ function renderTimeline(filterType = currentFilter) {
                 </div>
             `;
         } else if (item.link) {
-            const btnText = item.date === '3月25日' ? '进入游戏' : (item.date === '6月3日' || item.date === '5月27日' || item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' || item.date === '4月22日' || item.date === '4月23日' || item.date === '4月29日' || item.date === '5月13日' ? '前往了解' : (item.date === '6月1日' || item.date === '5月11日' ? '前往学习' : '前往考验'));
+            const btnText = item.date === '3月25日' ? '进入游戏' : (item.date === '6月12日' || item.date === '6月3日' || item.date === '5月27日' || item.date === '3月31日' || item.date === '4月8日' || item.date === '4月15日' || item.date === '4月22日' || item.date === '4月23日' || item.date === '4月29日' || item.date === '5月13日' ? '前往了解' : (item.date === '6月1日' || item.date === '5月11日' ? '前往学习' : '前往考验'));
             linkHtml = `<a href="${item.link}" target="_blank" class="timeline-link">${btnText}</a>`;
         } else {
             linkHtml = `<span class="timeline-hint">请关注内部通知</span>`;
